@@ -24,7 +24,7 @@ keys = [
 	"France", 
 	"Greece", 
 	"Poland", 
-	"(Saudi Arabia),(Saudi-Arabia) ", 
+	"(Saudi Arabia),(Saudi-Arabia)", 
 	"Qatar", 
 	"Chile", 
 	"Argentina", 
@@ -62,123 +62,67 @@ keys = [
 	"Guinea", 
 	"Mali", 
 	"(Burkina Faso),(Burkina-Faso)", 
-	"Niger"
+	"Niger",
 ];
 values = [
     "norway", 
-	
 	"switzerland", 
-	
 	"australia", 
-	
 	"germany", 
-	
 	"singapore", 
-	
 	"sweden", 
-	
 	"finland", 
-	
 	"canada", 
-	
 	"united-states", 
-	
 	"united-kingdom", 
-	
 	"japan", 
-	
 	"korea-south", 
-	
 	"israel", 
-	
 	"luxemburg",
     "spain", 
-	
 	"czechia", 
-	
 	"france", 
-	
 	"greece", 
-	
 	"poland", 
-	
-	"saudi-arabia ", 
-	
+	"saudi-arabia", 
 	"qatar ", 
-	
 	"chile", 
-	
 	"argentina", 
-	
 	"russia", 
-	
 	"romania", 
-	
 	"turkey", 
-	
 	"malaysia", 
-	
 	"iran", 
-	
 	"thailand", 
-	
 	"mexico", 
-	
 	"brazil", 
-	
 	"colombia", 
-	
 	"algeria", 
-	
 	"china", 
-	
 	"ukraine", 
-	
 	"mongolia", 
-	
 	"world", 
-	
 	"indonesia", 
-	
 	"south-africa", 
-	
 	"bolivia", 
-	
 	"gabon", 
-	
 	"egypt", 
-	
 	"vietnam", 
-	
 	"morocco", 
-	
 	"india", 
-	
 	"kenya", 
-	
 	"pakistan", 
-	
 	"nigeria", 
-	
 	"madagascar", 
-	
 	"cote-divoire", 
-	
 	"togo", 
-	
 	"senegal", 
-	
 	"haiti", 
-	
 	"ethiopia", 
-	
 	"guinea", 
-	
 	"mali", 
-	
 	"burkina-faso", 
-	
-	"niger"
+	"niger",
 ];
 countries = {};
 
@@ -187,10 +131,13 @@ const zipped = _.zip(keys, values);
 for(tuple of zipped) {
     keys = tuple[0].split(",");
     value = tuple[1];
+    value = value.trim();
     for(key of keys) {
         let str = key.replace("(", "");
         str = key.replace(")", "");
         
+        str = str.trim();
+
         countries[str] = value;
         countries[str.toUpperCase()] = value;
         countries[str.toLowerCase()] = value;
