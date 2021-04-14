@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/ouss1002/tab-opener#readme",
   "dependencies": {
-    "puppeteer": "^8.0.0"
+    "puppeteer": "^8.0.0",
+    "underscore": "^1.13.0"
   }
 }
