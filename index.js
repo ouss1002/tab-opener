@@ -2,7 +2,13 @@ const utils = require("./utils")
 const puppeteer = require('puppeteer');
 const fs = require('fs');
 
-selected_countries = ["algeria", "france", "germany", "japan", "italy"];
+selected_countries = ["alGeria", "france", "germaNy", "jaPan", "italy"];
+
+selected_countries = selected_countries.map(str => {
+    return str.toLowerCase();
+});
+
+// console.log(selected_countries);
 
 console.log(utils.countries);
 

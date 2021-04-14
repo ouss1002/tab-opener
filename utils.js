@@ -134,12 +134,12 @@ for(tuple of zipped) {
     value = value.trim();
     for(key of keys) {
         let str = key.replace("(", "");
-        str = key.replace(")", "");
+        str = str.replace(")", "");
         
         str = str.trim();
 
-        countries[str] = value;
-        countries[str.toUpperCase()] = value;
+        // countries[str] = value;
+        // countries[str.toUpperCase()] = value;
         countries[str.toLowerCase()] = value;
     }
 }
