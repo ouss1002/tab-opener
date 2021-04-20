@@ -2,7 +2,13 @@ const utils = require("./utils")
 const puppeteer = require('puppeteer');
 const fs = require('fs');
 
-selected_countries = ["alGeria", "france", "germaNy", "jaPan", "italy"];
+country1 = "Algeria";
+country2 = "France";
+country3 = "japan";
+country4 = "world";
+country5 = "us";
+
+selected_countries = [country1, country2, country3, country4, country5];
 
 selected_countries = selected_countries.map(str => {
     return str.toLowerCase();
@@ -50,7 +56,10 @@ const withPage = (browser) => async (fn) => {
     urls = [];
 
     for(country of selected_countries) {
-        if((Object.keys(utils.countries)).includes(country)) {
+        if(country.length == 0) {
+            print("skipping country");
+        }
+        else if((Object.keys(utils.countries)).includes(country)) {
             urls.push(`${utils.cia_link}${utils.countries[country]}`);
         }
         else {
